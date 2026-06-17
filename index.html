@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniBook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="accueil">
+        <div class="container">
+            <h1>MiniBook</h1>
+            <p class="subtitle">Bienvenue sur la plateforme sociale étudiante</p>
+            <p class="intro">Echangez avec les autres utilisateurs</p>
+            <div class="actions">
+                <button class="btn btn-pink" data-page="connexion">Se connecter</button>
+                <button class="btn btn-yellow" data-page="inscription">Inscription</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="inscription">
+        <div class="container">
+            <div class="back-row">
+                <button class="btn btn-back" data-page="accueil">← Retour</button>
+            </div>
+            <h1>Inscription</h1>
+            <p class="subtitle">Inscrivez-vous pour rejoindre MiniBook</p>
+            <form class="signup" id="signupForm">
+                <div class="avatar-col">
+                    <label class="avatar" for="avatarInputSignup">
+                        <img id="avatarPreviewSignup" alt="">
+                    </label>
+                    <input type="file" id="avatarInputSignup" accept="image/*">
+                    <button type="button" class="file-btn" id="chooseBtnSignup">Choisir une image</button>
+                </div>
+                <div class="fields-col">
+                    <input type="text" id="nom" name="nom" placeholder="Nom">
+                    <input type="text" id="prenom" name="prenom" placeholder="Prénom">
+                    <input type="email" id="email" name="email" placeholder="Email" class="full">
+                    <input type="password" id="password" name="password" placeholder="Mot de passe" class="full">
+                    <input type="password" id="confirmation" name="confirmation" placeholder="Confirmation" class="full">
+                </div>
+                <div class="submit-wrap">
+                    <button type="submit" class="submit">S'inscrire</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="connexion">
+        <div class="container">
+            <div class="back-row">
+                <button class="btn btn-back" data-page="accueil">← Retour</button>
+            </div>
+            <h1>Connexion</h1>
+            <p class="subtitle">Connectez-vous pour rejoindre MiniBook</p>
+            <form class="login" id="loginForm">
+                <input type="email" id="loginEmail" name="email" placeholder="Email">
+                <input type="password" id="loginPassword" name="password" placeholder="Mot de passe">
+                <button type="submit" class="submit">Connexion</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="modification">
+        <div class="container">
+            <h1>Modification</h1>
+            <p class="subtitle">Modifiez votre profil MiniBook</p>
+            <form class="edit-form" id="editForm">
+                <div class="avatar-col">
+                    <label class="avatar" for="avatarInputEdit">
+                        <img id="avatarPreviewEdit" alt="">
+                    </label>
+                    <input type="file" id="avatarInputEdit" accept="image/*">
+                    <button type="button" class="file-btn" id="chooseBtnEdit">Nouvelle photo</button>
+                </div>
+                <div class="fields-col">
+                    <input type="text" id="editNom" name="nom" placeholder="Nom">
+                    <input type="text" id="editPrenom" name="prenom" placeholder="Prénom">
+                    <input type="email" id="editEmail" name="email" placeholder="Email" class="full">
+                    <input type="password" id="editOldPassword" name="oldPassword" placeholder="Ancien mot de passe" class="full">
+                    <input type="password" id="editNewPassword" name="newPassword" placeholder="Nouveau mot de passe" class="full">
+                    <input type="password" id="editConfirmation" name="confirmation" placeholder="Confirmation" class="full">
+                </div>
+                <div class="actions">
+                    <button type="submit" class="btn btn-green">Modifier</button>
+                    <button type="button" class="btn btn-red" data-page="profil">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <div class="profil">
+        <div class="container">
+            <h1>Profil</h1>
+            <p class="subtitle">Votre profil utilisateur</p>
+            <div class="profile-card">
+                <div class="photo">
+                    <img id="photoPreview" alt="">
+                    <span class="photo-label">Photo</span>
+                </div>
+                <div class="infos">
+                    <p><strong>Nom :</strong> <span id="profilNom"></span></p>
+                    <p><strong>Prénom :</strong> <span id="profilPrenom"></span></p>
+                    <p><strong>Email :</strong> <span id="profilEmail"></span></p>
+                    <div class="actions">
+                        <button class="btn btn-green" data-page="fil">Aller au fil</button>
+                        <button class="btn btn-red" data-page="accueil">Déconnexion</button>
+                    </div>
+                </div>
+            </div>
+            <div class="edit-link">
+                <a href="#" data-page="modification">Modifier mes informations</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="fil">
+        <div class="container wide">
+            <header class="topbar">
+                <h1 class="brand">MiniBook</h1>
+                <div class="user">
+                    <div class="avatar-small"></div>
+                    <span class="user-name">Lina Dupont</span>
+                    <button class="btn btn-back" data-page="profil">Mon profil</button>
+                    <button class="btn btn-red" data-page="accueil">Déconnexion</button>
+                </div>
+            </header>
+
+            <section class="card new-post">
+                <h2>Nouvelle publication</h2>
+                <form id="postForm" class="new-post-form">
+                    <input type="text" id="postMessage" placeholder="Écrire un message...">
+                    <button type="submit" class="btn btn-pink">Publier</button>
+                </form>
+                <div class="more-link">
+                    <a href="#" data-page="publication">Publication avec image...</a>
+                </div>
+            </section>
+
+            <section class="card search-bar">
+                <h2>Rechercher</h2>
+                <form id="filSearchForm" class="search-form">
+                    <input type="text" id="filSearchText" placeholder="Rechercher une publication">
+                    <input type="text" id="filSearchAuthor" placeholder="Filtre auteur">
+                </form>
+            </section>
+
+            <section class="feed" id="feed"></section>
+        </div>
+    </div>
+
+    
+
+    <div class="publication">
+        <div class="container">
+            <h1>Publication</h1>
+            <p class="subtitle">Nouvelle publication</p>
+            <form class="pub-form" id="pubForm">
+                <label class="field-label">Texte de la publication</label>
+                <textarea id="pubText" placeholder="Écrire un message..."></textarea>
+
+                <label class="field-label">Ajouter une image</label>
+                <div class="image-row">
+                    <div class="preview">
+                        <img id="imgPreview" alt="">
+                        <span class="preview-label">Aperçu de l'image</span>
+                    </div>
+                    <div class="image-controls">
+                        <button type="button" class="file-btn" id="chooseImg">Choisir une image</button>
+                        <span class="filename" id="filename">Aucun fichier sélectionné</span>
+                    </div>
+                </div>
+                <input type="file" id="imgInput" accept="image/*">
+
+                <p class="message" id="message"></p>
+
+                <div class="actions">
+                    <button type="submit" class="btn btn-green">Publier</button>
+                    <button type="button" class="btn btn-red" data-page="fil">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
